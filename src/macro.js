@@ -23,6 +23,7 @@ import {
   addStyledImport,
 } from './macro/styled'
 import { handleThemeFunction } from './macro/theme'
+import { handleScreenFunction } from './macro/screen'
 import { handleGlobalStylesFunction } from './macro/globalStyles'
 import { handleTwProperty, handleTwFunction } from './macro/tw'
 import { handleCsProperty } from './macro/cs'
@@ -139,6 +140,9 @@ const twinMacro = ({ babel: { types: t }, references, state, config }) => {
 
   // GlobalStyles import
   handleGlobalStylesFunction({ references, program, t, state, config })
+
+  // Screens import
+  handleScreenFunction({ references, program, t, state, config })
 
   // Styled import
   updateStyledReferences(references.styled, state)

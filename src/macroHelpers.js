@@ -228,6 +228,7 @@ const validImports = new Set([
   'styled',
   'css',
   'theme',
+  'screen',
   'TwStyle',
   'ThemeStyle',
   'GlobalStyles',
@@ -246,7 +247,7 @@ const validateImports = imports => {
   })
   throwIf(unsupportedImport, () =>
     logGeneralError(
-      `Twin doesn't recognize { ${unsupportedImport} }\n\nTry one of these imports:\nimport tw, { styled, css, theme } from 'twin.macro'`
+      `Twin doesn't recognize { ${unsupportedImport} }\n\nTry one of these imports:\nimport tw, { styled, css, theme, screen, GlobalStyles } from 'twin.macro'`
     )
   )
 }
